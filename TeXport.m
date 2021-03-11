@@ -46,8 +46,7 @@ TeXport::usage=
 "TeXport[fname,eqn,keyvalues,Print\[Rule]True] prints a TeX-formatted expression to $Output with key-value pair definitions.
 TeXport[fname,eqn,,Print\[Rule]True] prints a TeX-formatted expression to $Output without key-value pairs.
 TeXport[fname,eqn,keyvalues,Export\[Rule]True] exports a TeX-formatted expression to <fname>.tex.
-TeXport[fname,eqn,keyvalues,Export\[Rule]True,Folder\[Rule]\"equations\"] exports a TeX-formatted expression to equations\\<fname>.tex. To set default options for later calls to TeXport, use e.g. SetOptions[TeXport,Export\[Rule]True]
-TeXport[fname,eqn,keyvalues] returns a TeX-formatted sentence corresponding to an expression (eqn) and a definition of variables (keyvalues) that immediately follows in a sentence format.";
+TeXport[fname,eqn,keyvalues,Export\[Rule]True,Folder\[Rule]\"equations\"] exports a TeX-formatted expression to equations\\<fname>.tex.";
 
 OpenWriteTeX::usage="OpenWriteTeX[file] opens file such that writing to it will have an infinite page width and the UTF8 character encoding. This is especially useful for exporting full derivations (i.e. multiple expressions) and intermediate sentences to a .tex file. By default, file is overwritten when OpenWriteTeX is called.
 OpenWriteTeX[] opens a temporary file with the same properties as above.
