@@ -43,7 +43,14 @@ ValueToObject::usage="ValueToObject[values] converts a set of values (e.g. {\"ap
 KeyValueToSentence::usage="KeyValueToSentence[keys,values] concatenates KeyToSubjectPredicate[keys] with ValueToObject[values] as in \"where $a$, $b$, and $c$ represent apples, bananas, and cantaloupe, respectively.\"";
 
 TeXport::usage=
-"TeXport[fname,eqn,keyvalues,Print\[Rule]True] prints a TeX-formatted expression to $Output with key-value pair definitions.
+"To set default options for later calls to TeXport, use e.g. SetOptions[TeXport,Export\[Rule]True]
+TeXport[fname,eqn,keyvalues] returns a TeX-formatted sentence corresponding to an expression (eqn) and a definition of variables (keyvalues) that immediately follows in a sentence format. E.g. \ 
+\"\\begin{equation} \ 
+	\\label{eq:texport-example} \ 
+\ta+b=c \ 
+\\end{equation} \ 
+where $a$, $b$, and $c$ represent apples, bananas, and cantaloupe, respectively.\"
+TeXport[fname,eqn,keyvalues,Print\[Rule]True] prints a TeX-formatted expression to $Output with key-value pair definitions.
 TeXport[fname,eqn,,Print\[Rule]True] prints a TeX-formatted expression to $Output without key-value pairs.
 TeXport[fname,eqn,keyvalues,Export\[Rule]True] exports a TeX-formatted expression to <fname>.tex.
 TeXport[fname,eqn,keyvalues,Export\[Rule]True,Folder\[Rule]\"equations\"] exports a TeX-formatted expression to equations\\<fname>.tex.";
