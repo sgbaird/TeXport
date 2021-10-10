@@ -98,11 +98,11 @@ KeyValueToSentence[keys_,values_]:=KeyToSubjectPredicate[keys]<>ValueToObject[va
 
 (* ::Input::Initialization:: *)
 Clear[TeXport]
-Options[TeXport]={Print->False,Export->False,Folder->"."};
-TeXport[fname_,eqn_,keyvalues_,OptionsPattern[]]:=Module[{folder,printQ,exportQ,fnametxt,fnametex,fpathtxt,fpathtex,txt,keys,values},
+Options[TeXport]={Print->False,Export->False,Folder->".",Widetext->False};
+TeXport[fname_,eqn_,keyvalues_,OptionsPattern[]]:=Module[{folder,printQ,exportQ,widetextQ,fnametxt,fnametex,fpathtxt,fpathtex,equation,txt,keys,values,sentence},
 
 (*PARSE options*)
-{printQ,exportQ,folder}=OptionValue[{"Print","Export","Folder"}];
+{printQ,exportQ,folder,widetextQ}=OptionValue[{"Print","Export","Folder","Widetext"}];
 
 (*MAKE file path strings*)
 fnametxt=fname<>".txt";
@@ -112,10 +112,16 @@ fnametex=fname<>".tex";
 (*MAKE the sentence*)
 sentence=If[Length@keyvalues>0,{keys,values}=keyvalues;"
 "<>KeyValueToSentence[keys,values],""];
-txt="\\begin{equation} \\label{eq:"<>fname<>"}
-	"<>ToString@TeXForm[eqn]<>"
-\\end{equation}"<>sentence;
 
+(*wrap with equation, and widetext if applicable*)
+equation="\\begin{equation} \\label{eq:"<>fname<>"} 
+	"<>ToString@TeXForm[eqn]<>"
+\\end{equation}";
+If[widetextQ,
+equation="\\begin{widetext}
+"<>equation<>"
+\\end{widetext}";];
+txt=equation<>sentence;
 (*PRINT or EXPORT the result*)
 If[exportQ,
 Export[fpathtxt,txt];RenameFile[fpathtxt,fpathtex,OverwriteTarget->True],
