@@ -1,5 +1,7 @@
 # TeXport
-Mathematica package useful for quickly typesetting equations and incorporating derivations into .tex files which can then be included in a main LaTeX document. TeXport acts as an advanced functionality in the "tips and tricks" of the [auto-paper](https://github.com/sparks-baird/auto-paper) repository.
+Mathematica package useful for quickly typesetting equations and incorporating derivations into .tex files which can then be included in a main LaTeX document.
+
+For automation related to scientific papers in general, see the [auto-paper repository](https://github.com/sparks-baird/auto-paper).
 
 
 ## Install Instructions
