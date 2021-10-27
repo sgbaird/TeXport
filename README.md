@@ -4,8 +4,16 @@ Mathematica package useful for quickly typesetting equations and incorporating d
 For automation related to scientific papers in general, see the [auto-paper repository](https://github.com/sparks-baird/auto-paper).
 
 
-## Install Instructions
+## Installation
+The following instructions are adapted from https://mathematica.stackexchange.com/a/672/61736.
+1. Open `TeXport.m` in Mathematica
+1. Choose File --> Install...
+1. Choose Type --> Package, Source --> (the open notebook), Install Name --> TeXport
+1. Load the package by evaluating <<TeXport`.
 
+Ensure the name is not mispelled (including capitalization).
+
+The Install... menu item will put the package into `FileNameJoin[{$UserBaseDirectory, "Applications"}]` which on Windows is `%AppData%\Mathematica\Applications`.
 
 ## Beginner  
 ### Code
